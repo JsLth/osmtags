@@ -1,0 +1,19 @@
+Package: osmtags
+Type: Package
+Title: Tag statistics from OpenStreetMap
+Version: 0.1.0
+Authors@R: 
+    person("Jonas", "Lieth", , "jonas.lieth@gesis.org", role = c("cre", "aut", "cph"))
+Description: Retrieves data on 'OpenStreetMap' tags using various instances of
+    the 'taginfo' API.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.1
+Depends: 
+    R (>= 3.5)
+Imports: 
+    httr2
+Suggests:
+    tibble,
+    showimage
