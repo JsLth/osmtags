@@ -170,11 +170,30 @@ the path to an image and (optionally) plots the image using
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Only retrieve number of hospitals that are explicitly buildings</span></span></span>
 <span class="r-in"><span><span class="fu">tag_combinations</span><span class="op">(</span><span class="st">"amenity"</span>, <span class="st">"hospital"</span>, query <span class="op">=</span> <span class="st">"building"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in additional_options(...):</span> object 'spec_info' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 4 × 5</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   other_key       other_value together_count to_fraction from_fraction</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> building:levels <span style="color: #949494;">""</span>                    <span style="text-decoration: underline;">3</span>759      0.017<span style="text-decoration: underline;">8</span>        0.000<span style="text-decoration: underline;">1</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> building        <span style="color: #949494;">"</span>hospital<span style="color: #949494;">"</span>            <span style="text-decoration: underline;">6</span>146      0.029<span style="text-decoration: underline;">2</span>        0.041<span style="text-decoration: underline;">1</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> building        <span style="color: #949494;">"</span>yes<span style="color: #949494;">"</span>                <span style="text-decoration: underline;">12</span>783      0.060<span style="text-decoration: underline;">6</span>        0     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> building        <span style="color: #949494;">""</span>                   <span style="text-decoration: underline;">19</span>530      0.092<span style="text-decoration: underline;">7</span>        0     </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Only retrieve combinations for hospitals that are mapped as relations</span></span></span>
 <span class="r-in"><span><span class="fu">tag_combinations</span><span class="op">(</span><span class="st">"amenity"</span>, <span class="st">"hospital"</span>, filter <span class="op">=</span> <span class="st">"relations"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in additional_options(...):</span> object 'spec_info' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 89 × 5</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    other_key    other_value             together_count to_fraction from_fraction</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> addr:state   <span style="color: #949494;">"</span>Telangana<span style="color: #949494;">"</span>                          1      0.000<span style="text-decoration: underline;">2</span>        1     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> name:ko-Latn <span style="color: #949494;">""</span>                                   1      0.000<span style="text-decoration: underline;">2</span>        0.001<span style="text-decoration: underline;">3</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> ncat         <span style="color: #949494;">""</span>                                   1      0.000<span style="text-decoration: underline;">2</span>        0.025 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> source       <span style="color: #949494;">"</span>http://kr.open.gugi.y…              1      0.000<span style="text-decoration: underline;">2</span>        0.167 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> source       <span style="color: #949494;">"</span>Local Knowledge<span style="color: #949494;">"</span>                    3      0.000<span style="text-decoration: underline;">7</span>        0.15  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> addr:block   <span style="color: #949494;">""</span>                                   4      0.001         0.014<span style="text-decoration: underline;">7</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> addr:state   <span style="color: #949494;">"</span>Tamil Nadu<span style="color: #949494;">"</span>                         6      0.001<span style="text-decoration: underline;">4</span>        0.857 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> name:ko      <span style="color: #949494;">""</span>                                   9      0.002<span style="text-decoration: underline;">2</span>        0.000<span style="text-decoration: underline;">5</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> source       <span style="color: #949494;">"</span>KSJ2<span style="color: #949494;">"</span>                              15      0.003<span style="text-decoration: underline;">6</span>        0.014 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> source:date  <span style="color: #949494;">""</span>                                  17      0.004<span style="text-decoration: underline;">1</span>        0.000<span style="text-decoration: underline;">1</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 79 more rows</span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Plot distribution of tags</span></span></span>
 <span class="r-in"><span><span class="fu">tag_distribution</span><span class="op">(</span><span class="st">"amenity"</span>, <span class="st">"hospital"</span>, type <span class="op">=</span> <span class="st">"nodes"</span><span class="op">)</span></span></span>
@@ -189,7 +208,7 @@ the path to an image and (optionally) plots the image using
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ value      : chr "post_box"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ counts     :'data.frame':	4 obs. of  3 variables:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ type          : chr [1:4] "all" "nodes" "ways" "relations"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ count         : int [1:4] 385466 385342 123 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ count         : int [1:4] 385844 385720 123 1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ count_fraction: num [1:4] 0 0.0015 0 0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ wiki_pages :'data.frame':	13 obs. of  4 variables:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ..$ lang   : chr [1:13] "ca" "cs" "de" "en" ...</span>
@@ -238,17 +257,32 @@ the path to an image and (optionally) plots the image using
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Retrieve JOSM projects on hospitals</span></span></span>
 <span class="r-in"><span><span class="fu">tag_projects</span><span class="op">(</span><span class="st">"amenity"</span>, <span class="st">"hospital"</span>, query <span class="op">=</span> <span class="st">"josm"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in additional_options(...):</span> object 'spec_info' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 11 × 12</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    project_id           project_name project_icon_url key   value on_node on_way</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> josm_main_mappaint_… JOSM main m… https://josm.op… amen… hosp… TRUE    FALSE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> josm_main_presets    JOSM main p… https://josm.op… amen… hosp… TRUE    FALSE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> josm_external_prese… JOSM user p… https://josm.op… amen… hosp… TRUE    FALSE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> josm_external_prese… JOSM user p… https://josm.op… amen… hosp… TRUE    FALSE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> josm_external_prese… JOSM user p… https://josm.op… amen… hosp… TRUE    FALSE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> josm_external_prese… JOSM user p… https://josm.op… amen… hosp… TRUE    FALSE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> josm_external_prese… JOSM user p… https://josm.op… amen… hosp… TRUE    FALSE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> josm_external_prese… JOSM user p… https://josm.op… amen… hosp… TRUE    FALSE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> josm_external_prese… JOSM user p… https://josm.op… amen… hosp… TRUE    FALSE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> josm_external_prese… JOSM user p… https://josm.op… amen… hosp… TRUE    TRUE  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> josm_external_prese… JOSM user p… https://josm.op… amen… hosp… TRUE    TRUE  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 5 more variables: on_relation &lt;lgl&gt;, on_area &lt;lgl&gt;, description &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   doc_url &lt;lgl&gt;, icon_url &lt;chr&gt;</span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Retrieve number of tags for each geometry type</span></span></span>
 <span class="r-in"><span><span class="fu">tag_stats</span><span class="op">(</span><span class="st">"amenity"</span>, <span class="st">"hospital"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 4 × 3</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   type       count count_fraction</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> all       <span style="text-decoration: underline;">210</span>740         0     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> nodes     <span style="text-decoration: underline;">113</span>333         0.000<span style="text-decoration: underline;">5</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> ways       <span style="text-decoration: underline;">93</span>242         0.000<span style="text-decoration: underline;">1</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> relations   <span style="text-decoration: underline;">4</span>165         0.000<span style="text-decoration: underline;">3</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> all       <span style="text-decoration: underline;">210</span>779         0     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> nodes     <span style="text-decoration: underline;">113</span>312         0.000<span style="text-decoration: underline;">5</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> ways       <span style="text-decoration: underline;">93</span>298         0.000<span style="text-decoration: underline;">1</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> relations   <span style="text-decoration: underline;">4</span>169         0.000<span style="text-decoration: underline;">3</span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Retrieve wiki pages on a tag</span></span></span>
 <span class="r-in"><span><span class="fu">tag_wiki_pages</span><span class="op">(</span><span class="st">"amenity"</span>, <span class="st">"hospital"</span><span class="op">)</span></span></span>
@@ -260,7 +294,7 @@ the path to an image and (optionally) plots the image using
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> en    ltr   English  English     Tag:… <span style="color: #949494;">"</span>A hospita… File:Inten… TRUE    FALSE </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> es    ltr   Español  Spanish     ES:T… <span style="color: #949494;">"</span>Estableci… File:RWB K… TRUE    FALSE </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> fr    ltr   Français French      FR:T… <span style="color: #949494;">"</span>Établisse… <span style="color: #BB0000;">NA</span>          TRUE    FALSE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> it    ltr   Italiano Italian     IT:T… <span style="color: #949494;">""</span>          File:Inten… TRUE    FALSE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> it    ltr   Italiano Italian     IT:T… <span style="color: #949494;">"</span>Un ospeda… File:Inten… TRUE    FALSE </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> ja    ltr   日本語   Japanese    JA:T… <span style="color: #949494;">"</span>入院治療…  File:Inten… TRUE    FALSE </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> ko    ltr   한국어   Korean      Ko:T… <span style="color: #949494;">"</span>입원 치료… File:Inten… TRUE    FALSE </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> pl    ltr   Polski   Polish      Pl:T… <span style="color: #949494;">"</span>Szpital z… File:Znak … TRUE    FALSE </span>
