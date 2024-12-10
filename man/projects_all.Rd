@@ -2,13 +2,88 @@
 % Please edit documentation in R/projects.R
 \name{projects_all}
 \alias{projects_all}
+\alias{projects_keys}
+\alias{projects_tags}
+\alias{project_icon}
+\alias{project_tags}
 \title{Projects}
 \source{
 \url{https://taginfo.openstreetmap.org/taginfo/apidoc}
 }
 \usage{
 projects_all(query = NULL, status = "OK", ...)
+
+projects_keys(query = NULL, ...)
+
+projects_tags(query = NULL, ...)
+
+project_icon(project, path = tempfile(), plot = TRUE)
+
+project_tags(project, ...)
+}
+\arguments{
+\item{query}{A search term to filter results by. For \code{projects_all},
+this matches name or description. For \code{projects_keys}, this matches the
+keys. For \code{projects_tags}, this matches the tags.}
+
+\item{status}{Only show projects with a given status. This argument does
+not seem to do anything currently.}
+
+\item{...}{Additional generic parameters used for pagination, filtering,
+and sorting. Can include the following:
+
+\itemize{
+ \item{\code{page}: If pagination is enabled, specifies the page number.}
+ \item{\code{rp}: Enables pagination and specifies the number of results
+ returned per page.}
+ \item{\code{filter}: A character vector specifying the OSM geometry type
+ to filter the results by. For example, if \code{"nodes"}, only tags on
+ nodes are returned. Can be several of \code{"all"} (no filtering),
+ \code{"nodes"}, \code{"relations"}, or \code{"ways"}.}
+ \item{\code{sortname}: Numeric column of the output by which to arrange the
+ results.}
+ \item{\code{sortorder}: Whether to sort ascending (\code{"asc"}) or
+ descending (\code{"desc"}).}
+}
+Note that not all additional arguments are defined for all API methods.
+For details, refer to \code{\link{api_spec}}.}
+
+\item{project}{A project ID.}
+
+\item{path}{Path to a file where the plot should be written to.}
+
+\item{plot}{Whether to plot the distribution using the R graphics device
+using \code{\link[showimage]{show_image}}. If \code{FALSE}, simply returns
+the path to the file. Defaults to \code{TRUE}.}
+}
+\value{
+\itemize{
+ \item{\code{projects_all}: A dataframe containing basic information about
+ all projects and their used keys}
+ \item{\code{projects_key} / \code{projects_tags}: A dataframe containing
+ information about each key / tag associated with a project and their
+ occurences in projects and wiki pages.}
+ \item{\code{project_icon}: The path to the downloaded icon and
+ (if \code{plot = TRUE})}, the icon shown as an R plot. Note that some
+ icons are stored as SVG and produce an error when trying to plot.
+ \item{\code{project_tags}: A dataframe containing information about how
+ a tag is used in a project.}
+}
 }
 \description{
-Query projects.
+OSM projects are projects that use tags in some way, e.g. editors, routers,
+maps, or data extractions tools. Taginfo keeps information about the keys
+and tags that a project uses. These functions provide a means to retrieve
+this information.
+}
+\examples{
+# get all projects in osmtags
+projects_all()
+
+# get all highway keys and tags that are used in a project
+projects_keys("highway")
+projects_tags("highway")
+
+#
+
 }

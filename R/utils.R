@@ -76,3 +76,8 @@ as_data_frame <- function(x) {
 get_caller_name <- function(parent = sys.parent()) {
   deparse(sys.call(parent)[[1]])
 }
+
+
+has_file_ext <- function(path) {
+  grepl("\\.([a-z])+$", path)
+}

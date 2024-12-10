@@ -4,8 +4,12 @@
 \name{osmtags-package}
 \alias{osmtags}
 \alias{osmtags-package}
-\title{osmtags: What the Package Does (Title Case)}
+\title{osmtags: Tag statistics from OpenStreetMap}
 \description{
-More about what it does (maybe more than one line) Use four spaces when indenting paragraphs within the Description.
+Retrieves data on 'OpenStreetMap' tags using various instances of the 'taginfo' API.
+}
+\author{
+\strong{Maintainer}: Jonas Lieth \email{jonas.lieth@gesis.org} [copyright holder]
+
 }
 \keyword{internal}
